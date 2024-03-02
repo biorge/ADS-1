@@ -14,10 +14,10 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   bool flag = 0;
-  uint64_t count=0;
+  uint64_t count = 0;
   uint64_t num = 3;
   uint64_t i = 1;
-  if(n==1){
+  if (n == 1) {
     return 2;
     flag == 1;
   }
@@ -25,18 +25,18 @@ uint64_t nPrime(uint64_t n) {
     return 3;
     flag == 1;
   }
-  while (flag !=1){
-    count=0;
+  while (flag !=1) {
+    count = 0;
     for (uint64_t j = 2; j <= sqrt(num); j++) {
       if (num % j == 0) {
         count++;
       }
     }
-    if(count==0){
+    if (count == 0) {
       i++;
     }
-    if ((i==n)){
-      flag=true;
+    if ((i == n)) {
+      flag = true;
       return(num);
     }
     num+=2;
@@ -47,14 +47,14 @@ uint64_t nextPrime(uint64_t value) {
   bool flag = 0;
   uint64_t count = 0;
   uint64_t num = value+1;
-  while (flag !=1){
-    count=0;
+  while (flag !=1) {
+    count = 0;
     for (uint64_t j = 2; j <= sqrt(num); j++) {
       if (num % j == 0) {
         count++;
       }
     }
-    if(count==0){
+    if (count == 0) {
       return(num);
       flag = 1;
     }
@@ -63,17 +63,17 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t count=0;
+  uint64_t count = 0;
   uint64_t num = 3;
   uint64_t sum = 2;
-  while (num<hbound){
-    count=0;
+  while (num < hbound) {
+    count = 0;
     for (uint64_t j = 2; j <= sqrt(num); j++) {
       if (num % j == 0) {
         count++;
       }
     }
-    if(count==0){
+    if (count == 0) {
       sum+=num;
     }
     num+=2;
